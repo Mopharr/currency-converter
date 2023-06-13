@@ -1,18 +1,19 @@
 import { Flex } from '@chakra-ui/react';
-import Converter from './components/Converter';
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import Login from './Pages/Login';
+import ConvertePage from './Pages/Converter';
+
 
 function App() {
   return (
-    <>
-      <Flex
-        bgGradient="linear(to-t, #ae085c, #2e0656)"
-        height="100vh"
-        justifyContent="center"
-      >
-        <Converter />
-      </Flex>
-    </>
-  );
+      <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/converter" element={<ConvertePage/>} />
+        
+    </Routes>
+    </Router>
+  )
 }
 
 export default App;
